@@ -7,7 +7,8 @@ RUN apt update -y
 ENV LD_LIBRARY_PATH /usr/local/lib
 ENV LDFLAGS -L/usr/local/lib
 ENV CPPFLAGS -I/usr/local/include
-RUN apt install -y libboost-all-dev wget sudo build-essential libmysqlcppconn-dev cmake
+RUN apt install -y libboost-all-dev wget sudo build-essential libmysqlcppconn-dev cmake ccache
+ENV PATH="/usr/lib/ccache:${PATH}"
 WORKDIR /root
 RUN wget https://github.com/facebook/proxygen/archive/v2018.02.26.00.tar.gz
 RUN tar xvfz v2018.02.26.00.tar.gz
