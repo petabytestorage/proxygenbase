@@ -7,7 +7,7 @@ RUN apt update -y
 ENV LD_LIBRARY_PATH /usr/local/lib
 ENV LDFLAGS -L/usr/local/lib
 ENV CPPFLAGS -I/usr/local/include
-RUN apt install -y libboost-all-dev wget sudo build-essential libmysqlcppconn-dev cmake ccache libcurl4-openssl-dev libcurlpp-dev libjansson-dev lcov libodb-dev odb
+RUN apt install -y libboost-all-dev wget sudo build-essential libmysqlclient-dev cmake ccache libcurl4-openssl-dev libcurlpp-dev libjansson-dev lcov libodb-dev odb libodb-mysql-dev
 ENV PATH="/usr/lib/ccache:${PATH}"
 WORKDIR /root
 RUN wget https://github.com/facebook/proxygen/archive/v2018.02.26.00.tar.gz
